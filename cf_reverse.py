@@ -21,7 +21,7 @@ def cf_clearance_reverse(domain, siteKey, client_request=None, *args, **kwargs) 
     )
     wb = result.stdout.strip()
     #https://www.support.kogama.com/cdn-cgi/challenge-platform/h/b/scripts/jsd/62ec4f065604/main.js?
-    r = client_request.get(f'https://www.support.kogama.com/cdn-cgi/challenge-platform/h/b/scripts/jsd/62ec4f065604/main.js?')
+    r = client_request.get(f'https://perchance.org/cdn-cgi/challenge-platform/h/b/scripts/jsd/f9574c83b4d7/main.js?')
     html_site = r.text
     cf_ray = r.headers['CF-RAY'].split('-')[0]
 
@@ -40,7 +40,7 @@ def get_cf_cookie(domain, siteKey, client_request=None, *args, **kwargs):
         's': s_param
     }
     jsd = client_request.post(
-        f'https://www.support.kogama.com/cdn-cgi/challenge-platform/h/b/jsd/r/{cf_ray}',
+        f'https://perchance.org/cdn-cgi/challenge-platform/h/b/jsd/r/{cf_ray}',
         #headers={
         #    'content-type': 'application/json'
         #},
